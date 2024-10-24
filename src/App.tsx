@@ -19,7 +19,7 @@ function App() {
 
     if(token) {
       try {
-        const SECRET_KEY = "1"; // Ensure this matches the backend
+        // const SECRET_KEY = "1"; // Ensure this matches the backend
         const decode: DecodedToken = jwtDecode(token);
         const currentTime = Date.now() / 1000;
         if (decode.exp > currentTime) {
