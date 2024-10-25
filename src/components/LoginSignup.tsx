@@ -55,7 +55,7 @@ const LoginSignUp: React.FC<LoginSignUpProps> = ({ onAuthSuccess }) => {
       }
 
       // Proceed with authentication if no errors
-      const response = await fetch(config.api.endpoint_uri, {
+      const response = await fetch(`${config.api.endpoint_uri}/auth`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
