@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import config from "../config";
 
 interface LoginSignUpProps {
   onAuthSuccess: () => void;
 }
+
+
 
 const LoginSignUp: React.FC<LoginSignUpProps> = ({ onAuthSuccess }) => {
   const [isSignUp, setIsSignUp] = useState<boolean>(false);
@@ -52,7 +55,7 @@ const LoginSignUp: React.FC<LoginSignUpProps> = ({ onAuthSuccess }) => {
       }
 
       // Proceed with authentication if no errors
-      const response = await fetch("http://localhost:8000/api/auth", {
+      const response = await fetch(config.api.endpoint_uri, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
